@@ -11,6 +11,8 @@ import java.util.Set;
 @DomainObject
 public class AbwesenheitsKalender {
 
+    protected AbwesenheitsKalender(){};
+
     @NotNull
     protected Set<Team> teams;
 
@@ -26,6 +28,6 @@ public class AbwesenheitsKalender {
                 // TODO Abwesenheiten
             });
         });
-        System.out.println(buf.toString());
+        System.out.println("Abwesenheiten:\n"+buf.toString());
     }
 }

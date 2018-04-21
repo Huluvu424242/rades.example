@@ -51,6 +51,14 @@
             <artifactId>rades-annotations</artifactId>
             <version>2.0.1</version>
         </dependency>
+
+        <!-- RADES Generate -->
+        <dependency>
+            <groupId>org.apache.bval</groupId>
+            <artifactId>bval-jsr</artifactId>
+            <version>1.1.2</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
@@ -71,9 +79,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.vintage</groupId>
-            <artifactId>junit-vintage-engine</artifactId>
-            <version>5.1.0</version>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>1.1.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
