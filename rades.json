@@ -1,0 +1,12 @@
+
+{
+    "groupID":"com.github.funthomas424242",
+    "artifactID":"rades.example",
+    "version":"1.0.0-SNAPSHOT",
+    "projectDescription":"Beispiele zur Automatisierung mit RADES",
+    "githubUsername":"FunThomas424242",
+    "githubRepositoryname":"rades.example",
+    "bintrayUsername":"funthomas424242",
+    "bintrayRepositoryname":"funthomas424242-lib",
+    "bintrayPackagename":"rades.example"
+}
