@@ -33,7 +33,6 @@ class AbwesenheitsKalenderTest {
     @Test
     @DisplayName("Jahresurlaub einer Person als Abwesenheit")
     public void jahresUrlaubEinerPerson() {
-        kalender.printAbwesenheiten();
 
         final Datum birthdayKathrin = new DatumBuilder().withJahr(1969).withMonat(4).withTag(13).build();
         assertNotNull(birthdayKathrin);
