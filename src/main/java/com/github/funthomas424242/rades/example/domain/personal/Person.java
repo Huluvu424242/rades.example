@@ -39,4 +39,9 @@ public class Person {
         return period.getYears();
     }
 
+    @Override
+    public String toString(){
+        return nachname +", "+vorname;
+    }
+
 }

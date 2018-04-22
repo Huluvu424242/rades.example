@@ -26,10 +26,10 @@ public final class AbwesenheitsKalender {
 
             // Mitglieder
             curTeam.getMitglieder().forEach(person -> {
-                final PersonAccessor curPerson = new PersonAccessor(person);
-                buf.append("\n "+curPerson.getNachname() + ", " + curPerson.getVorname()+": ");
+                buf.append("\n "+person +": ");
 
                 // Abwesenheiten
+                final PersonAccessor curPerson = new PersonAccessor(person);
                 curPerson.getAbwesenheiten().forEach(abwesenheit -> {
                     buf.append(" "+abwesenheit+" ");
                 });
