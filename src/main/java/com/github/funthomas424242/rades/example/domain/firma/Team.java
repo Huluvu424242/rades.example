@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 @DomainObject
-public class Team {
+public final class Team {
 
     @NotNull
     protected Name teamName;
@@ -19,6 +19,8 @@ public class Team {
     // @RadesNoBuilder - die komplette Liste soll nicht tauschbar sein
     // @RadesNoAccessor - die Liste darf nur herausgegeben werden, wenn sie immutable ist
     protected Set<Person> mitglieder = new HashSet<>();
+
+    protected Team(){}
 
     public void addMitglied(final Person person){
         mitglieder.add(person);

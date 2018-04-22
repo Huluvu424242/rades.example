@@ -10,9 +10,10 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
+import java.util.stream.Stream;
 
 @DomainObject
-public class Person {
+public final class Person {
 
     @NotNull
     protected Datum birthday;
@@ -24,6 +25,8 @@ public class Person {
     protected Name vorname;
 
     protected List<Abwesenheit> abwesenheiten;
+
+    protected Person(){}
 
     public int berechneAlter() {
         return this.berechneAlterZum(
@@ -39,9 +42,13 @@ public class Person {
         return period.getYears();
     }
 
+    public Stream<Abwesenheit> getAbwesenheiten() {
+        return abwesenheiten.stream();
+    }
+
     @Override
-    public String toString(){
-        return nachname +", "+vorname;
+    public String toString() {
+        return nachname + ", " + vorname;
     }
 
 }
