@@ -28,13 +28,7 @@
         <system>Travis</system>
         <url>https://travis-ci.org/FunThomas424242/rades.example</url>
     </ciManagement>
-    <distributionManagement>
-        <repository>
-            <id>bintray-funthomas424242-funthomas424242-lib</id>
-            <name>funthomas424242-funthomas424242-lib</name>
-            <url>https://api.bintray.com/maven/funthomas424242/funthomas424242-lib/rades.example/;publish=0</url>
-        </repository>
-    </distributionManagement>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
