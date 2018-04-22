@@ -1,0 +1,29 @@
+[#status]
+image:https://api.bintray.com/packages/funthomas424242/funthomas424242-libs/rades.example/images/download.svg[link="https://bintray.com/funthomas424242/funthomas424242-libs/rades.example/_latestVersion"]
+image:https://travis-ci.org/FunThomas424242/rades.example.svg?branch=master["Build Status", link="https://travis-ci.org/FunThomas424242/rades.example"]
+image:https://api.codacy.com/project/badge/Grade/88bf76546176437ea389629a2087d1b5["Codacy code quality", link="https://www.codacy.com/app/FunThomas424242/rades.example?utm_source=github.com&utm_medium=referral&utm_content=FunThomas424242/rades.example&utm_campaign=Badge_Grade"]
+image:https://codecov.io/gh/FunThomas424242/rades.example/branch/master/graph/badge.svg[link="https://codecov.io/gh/FunThomas424242/rades.example"]
+image:https://badge.waffle.io/FunThomas424242/rades.example.svg?columns=all["Waffle.io - Columns and their card count", link="https://waffle.io/FunThomas424242/rades.example"]
+
+[#main]
+= rades.example
+
+Stellt im Rahmen von link:https://github.com/FunThomas424242/RADeS[Rades] Annotationen zur Automatisierung bereit.
+Die angebotenen Annotationen können zur Generierung folgender Pattern genutzt werden:
+
+* link:https://en.wikipedia.org/wiki/Builder_pattern[Builder Pattern]
+* link:https://sourcemaking.com/design_patterns/private_class_data[Accessor Pattern]
+
+Hier finden Sie link:https://funthomas424242.github.io/rades.example/index.html[die Projektdokumentation, das Nutzerhandbuch].
+
+# Danksagung
+Dieses Projekt wäre ohne die Dienste, welche Open-Source-Projekte großzügig unterstützen, nicht möglich gewesen:
+
+* GitHub, welches kostenfrei ermöglicht in der Cloud gemeinsam am Code zu arbeiten und das Beitragen zu Open Source Projekten vereinfacht.
+* Travis CI welches kostenfrei cloudbasierte Build-Services bereitstellt, die sich einfach in GitHub integrieren lassen.
+* Codacy welches kostenfrei die Programmquellen von Open Source Projekten auf Einhaltung von Programmierregeln untersucht.
+* Codev welches kostenfrei die erreichte Codecoverage der Testfälle ermittelt.
+* Waffle.io welches für die agile Abarbeitung von Bugs und Features genutzt wird.
+* JFrog welches für die Bereitstellung von Bintray, der Distributionsplattform, die verwendet wird, um mögliche Downloads anzubieten. Bintray war wirklich von unschätzbarem Wert, da es nicht nur kostenloses Hosting und Traffic für die Software bietet, sondern es auch sehr einfach macht, ein Repository für benutzerdefinierte Binärformate einzurichten und die Metadaten der Downloads zu verwalten. Dank der einfach zu verwendenden REST-API ist es möglich einen automatisierten Workflow mit GitHub und Travis CI einzurichten, um die Software in kürzester Zeit zu erstellen, hochzuladen und zu katalogisieren.
+* Sonatype welches für die Bereitstellung von Maven Central, der Distributionsplattform, die verwendet wird, um mögliche Downloads im Standard Maven Repository anzubieten.
+
