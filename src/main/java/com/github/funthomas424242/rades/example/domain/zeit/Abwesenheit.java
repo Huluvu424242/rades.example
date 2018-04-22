@@ -3,7 +3,6 @@ package com.github.funthomas424242.rades.example.domain.zeit;
 import com.github.funthomas424242.rades.example.domain.DomainObject;
 
 import javax.validation.constraints.NotNull;
-import java.time.Period;
 
 @DomainObject
 public class Abwesenheit {
@@ -23,7 +22,7 @@ public class Abwesenheit {
     protected Grund grund;
 
     @Override
-    public String toString(){
-        return grund.name().substring(0,1) +zeitraum;
+    public String toString() {
+        return grund.name().substring(0, 1) + zeitraum;
     }
 }

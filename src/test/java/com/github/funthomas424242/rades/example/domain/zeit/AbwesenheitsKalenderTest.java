@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -25,8 +24,8 @@ class AbwesenheitsKalenderTest {
     @BeforeEach
     public void setUp() {
         kalender = new AbwesenheitsKalenderBuilder()
-        .withTeams(new HashSet<Team>())
-        .build();
+                .withTeams(new HashSet<Team>())
+                .build();
     }
 
 
@@ -44,18 +43,18 @@ class AbwesenheitsKalenderTest {
         assertNotNull(kathrin);
         final Abwesenheit jahresurlaubKathrin = new AbwesenheitBuilder()
                 .withGrund(Abwesenheit.Grund.URLAUB)
-                .withZeitraum( new ZeitraumBuilder()
+                .withZeitraum(new ZeitraumBuilder()
                         .withVon(new DatumBuilder().withJahr(2018).withMonat(7).withTag(1).build())
                         .withBis(new DatumBuilder().withJahr(2018).withMonat(7).withTag(31).build())
                         .build())
                 .build();
         assertNotNull(jahresurlaubKathrin);
-        final PersonAccessor kathrinAccessor=new PersonAccessor(kathrin);
+        final PersonAccessor kathrinAccessor = new PersonAccessor(kathrin);
         final Person kathrinMusterfrau = new PersonBuilder(kathrin)
                 .withAbwesenheiten(new ArrayList<Abwesenheit>())
                 .build();
         kathrinAccessor.getAbwesenheiten().add(jahresurlaubKathrin);
-        assertEquals(1,kathrinAccessor.getAbwesenheiten().size());
+        assertEquals(1, kathrinAccessor.getAbwesenheiten().size());
 
         final Team team4 = new TeamBuilder().withTeamName(new NameBuilder().withWert("Team 4").build()).withMitglieder(new HashSet<Person>()).build();
         final TeamAccessor team4Accessor = new TeamAccessor(team4);
@@ -63,7 +62,7 @@ class AbwesenheitsKalenderTest {
 
         final AbwesenheitsKalenderAccessor abwesenheitsKalenderAccessor = new AbwesenheitsKalenderAccessor(kalender);
         abwesenheitsKalenderAccessor.getTeams().add(team4);
-        assertEquals(1,abwesenheitsKalenderAccessor.getTeams().size());
+        assertEquals(1, abwesenheitsKalenderAccessor.getTeams().size());
 
         kalender.printAbwesenheiten();
 
