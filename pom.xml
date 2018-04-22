@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.funthomas424242</groupId>
     <artifactId>rades.example</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <name>rades.example</name>
     <description>Beispiele zur Automatisierung mit RADES</description>
@@ -248,6 +248,15 @@
             </plugins>
         </pluginManagement>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-funthomas424242-funthomas424242-libs</id>
+            <name>funthomas424242-funthomas424242-libs</name>
+            <url>https://api.bintray.com/maven/funthomas424242/funthomas424242-libs/${project.artifactId}/;publish=1</url>
+            <!--<url>https://api.bintray.com/maven/${bintray.subject}/${bintray.repo}/${bintray.package}/;publish=1</url>-->
+        </repository>
+    </distributionManagement>
 
     <developers>
         <developer>
