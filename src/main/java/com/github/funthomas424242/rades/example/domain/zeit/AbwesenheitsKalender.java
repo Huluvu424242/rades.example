@@ -9,23 +9,30 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @DomainObject
-public class AbwesenheitsKalender {
-
-    protected AbwesenheitsKalender(){};
+public final class AbwesenheitsKalender {
 
     @NotNull
     protected Set<Team> teams;
 
+    protected AbwesenheitsKalender(){};
 
     public void printAbwesenheiten() {
         final StringBuffer buf = new StringBuffer();
+
+        // Teams
         teams.forEach(team -> {
             final TeamAccessor curTeam = new TeamAccessor(team);
-            buf.append(curTeam.getTeamName() + "\n");
+            buf.append(curTeam.getTeamName());
+
+            // Mitglieder
             curTeam.getMitglieder().forEach(person -> {
                 final PersonAccessor curPerson = new PersonAccessor(person);
-                buf.append(curPerson.getNachname() + ", " + curPerson.getVorname());
-                // TODO Abwesenheiten
+                buf.append("\n "+curPerson.getNachname() + ", " + curPerson.getVorname()+": ");
+
+                // Abwesenheiten
+                curPerson.getAbwesenheiten().forEach(abwesenheit -> {
+                    buf.append(" "+abwesenheit+" ");
+                });
             });
         });
         System.out.println("Abwesenheiten:\n"+buf.toString());

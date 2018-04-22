@@ -44,7 +44,10 @@ class AbwesenheitsKalenderTest {
         assertNotNull(kathrin);
         final Abwesenheit jahresurlaubKathrin = new AbwesenheitBuilder()
                 .withGrund(Abwesenheit.Grund.URLAUB)
-                .withPeriode(LocalDate.of(2018,7,1).until(LocalDate.of(2018,7,30)))
+                .withZeitraum( new ZeitraumBuilder()
+                        .withVon(new DatumBuilder().withJahr(2018).withMonat(7).withTag(1).build())
+                        .withBis(new DatumBuilder().withJahr(2018).withMonat(7).withTag(31).build())
+                        .build())
                 .build();
         assertNotNull(jahresurlaubKathrin);
         final PersonAccessor kathrinAccessor=new PersonAccessor(kathrin);

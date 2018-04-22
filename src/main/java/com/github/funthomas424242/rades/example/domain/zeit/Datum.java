@@ -2,15 +2,19 @@ package com.github.funthomas424242.rades.example.domain.zeit;
 
 import com.github.funthomas424242.rades.example.domain.DomainObject;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @DomainObject
 public class Datum {
 
+    @NotNull
     protected int jahr;
 
+    @NotNull
     protected int monat;
 
+    @NotNull
     protected int tag;
 
     public LocalDate toLocalDate() {
@@ -23,6 +27,11 @@ public class Datum {
                 .withMonat(date.getMonthValue())
                 .withTag(date.getDayOfMonth())
                 .build();
+    }
+
+    @Override
+    public String toString(){
+        return tag + "."+monat+"."+jahr;
     }
 
 }

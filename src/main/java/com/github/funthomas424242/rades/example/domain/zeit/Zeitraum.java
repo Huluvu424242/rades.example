@@ -6,24 +6,22 @@ import javax.validation.constraints.NotNull;
 import java.time.Period;
 
 @DomainObject
-public class Abwesenheit {
+public final class Zeitraum {
 
-    public enum Grund {
-        URLAUB,
-        KRANKHEIT,
-        ONBOARDING,
-        ROLLOFF,
-        SONSTIGES
+    @NotNull
+    protected Datum von;
+
+    @NotNull
+    protected Datum bis;
+
+    protected Zeitraum(){}
+
+    public Period toPeriod(){
+        return von.toLocalDate().until(bis.toLocalDate());
     }
-
-    @NotNull
-    protected Zeitraum zeitraum;
-
-    @NotNull
-    protected Grund grund;
 
     @Override
     public String toString(){
-        return grund.name().substring(0,1) +zeitraum;
+        return "[" + von + " - "+bis +"]";
     }
 }

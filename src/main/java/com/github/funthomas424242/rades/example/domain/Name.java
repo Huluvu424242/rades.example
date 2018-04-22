@@ -8,5 +8,9 @@ public class Name {
     @NotNull
     protected String wert;
 
+    @Override
+    public String toString(){
+        return wert;
+    }
 
 }
