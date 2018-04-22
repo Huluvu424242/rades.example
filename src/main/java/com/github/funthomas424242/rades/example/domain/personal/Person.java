@@ -31,8 +31,8 @@ public class Person {
     }
 
     public int berechneAlterZum(final Datum datum) {
-        if (this.birthday == null) {
-            throw new IllegalStateException("birthday is unknow because is jet not set");
+        if (datum == null) {
+            throw new IllegalArgumentException("Es wird ein Datum zur Berechnung benötigt.");
         }
         final Period period
                 = birthday.toLocalDate().until(datum.toLocalDate());
