@@ -1,5 +1,7 @@
 package com.github.funthomas424242.rades.example.domain.firma;
 
+import com.github.funthomas424242.rades.annotations.accessors.RadesNoAccessor;
+import com.github.funthomas424242.rades.annotations.builder.RadesNoBuilder;
 import com.github.funthomas424242.rades.example.domain.DomainObject;
 import com.github.funthomas424242.rades.example.domain.Name;
 import com.github.funthomas424242.rades.example.domain.personal.Person;
@@ -15,9 +17,8 @@ public final class Team {
     @NotNull
     protected Name teamName;
 
-    // TODO die Buildermethode withMitglieder sollte nicht genutzt werden.
-    // @RadesNoBuilder - die komplette Liste soll nicht tauschbar sein
-    // @RadesNoAccessor - die Liste darf nur herausgegeben werden, wenn sie immutable ist
+     @RadesNoBuilder // die komplette Liste soll nicht tauschbar sein
+     @RadesNoAccessor // die Liste darf nur herausgegeben werden, wenn sie immutable ist
     protected Set<Person> mitglieder = new HashSet<>();
 
     protected Team(){}

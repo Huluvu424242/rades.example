@@ -1,6 +1,7 @@
 package com.github.funthomas424242.rades.example.domain.personal;
 
 
+import com.github.funthomas424242.rades.annotations.accessors.RadesNoAccessor;
 import com.github.funthomas424242.rades.example.domain.DomainObject;
 import com.github.funthomas424242.rades.example.domain.Name;
 import com.github.funthomas424242.rades.example.domain.zeit.Abwesenheit;
@@ -24,6 +25,7 @@ public final class Person {
     @NotNull
     protected Name vorname;
 
+    @RadesNoAccessor
     protected List<Abwesenheit> abwesenheiten;
 
     protected Person(){}
@@ -45,6 +47,11 @@ public final class Person {
     public Stream<Abwesenheit> getAbwesenheiten() {
         return abwesenheiten.stream();
     }
+
+    public void addAbwesenheit(final Abwesenheit abwesenheit){
+        this.abwesenheiten.add(abwesenheit);
+    }
+
 
     @Override
     public String toString() {

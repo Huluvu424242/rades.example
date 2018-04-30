@@ -53,12 +53,12 @@ class AbwesenheitsKalenderTest {
         final Person kathrinMusterfrau = new PersonBuilder(kathrin)
                 .withAbwesenheiten(new ArrayList<Abwesenheit>())
                 .build();
-        kathrinAccessor.getAbwesenheiten().add(jahresurlaubKathrin);
-        assertEquals(1, kathrinAccessor.getAbwesenheiten().size());
+        kathrinAccessor.addAbwesenheit(jahresurlaubKathrin);
+        assertEquals(1, kathrinAccessor.getAbwesenheiten().count());
 
-        final Team team4 = new TeamBuilder().withTeamName(new NameBuilder().withWert("Team 4").build()).withMitglieder(new HashSet<Person>()).build();
+        final Team team4 = new TeamBuilder().withTeamName(new NameBuilder().withWert("Team 4").build()).build();
         final TeamAccessor team4Accessor = new TeamAccessor(team4);
-        team4Accessor.getMitglieder().add(kathrinMusterfrau);
+        team4Accessor.addMitglied(kathrinMusterfrau);
 
         final AbwesenheitsKalenderAccessor abwesenheitsKalenderAccessor = new AbwesenheitsKalenderAccessor(kalender);
         abwesenheitsKalenderAccessor.getTeams().add(team4);
