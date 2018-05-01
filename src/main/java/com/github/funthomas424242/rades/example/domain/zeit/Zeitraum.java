@@ -14,14 +14,19 @@ public final class Zeitraum {
     @NotNull
     protected Datum bis;
 
-    protected Zeitraum(){}
+    protected Zeitraum() {
+    }
 
-    public Period toPeriod(){
+    public static Zeitraum of(final Datum von, final Datum bis) {
+        return new ZeitraumBuilder().withVon(von).withBis(bis).build();
+    }
+
+    public Period toPeriod() {
         return von.toLocalDate().until(bis.toLocalDate());
     }
 
     @Override
-    public String toString(){
-        return "[" + von + " - "+bis +"]";
+    public String toString() {
+        return "[" + von + " - " + bis + "]";
     }
 }

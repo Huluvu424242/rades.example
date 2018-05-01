@@ -2,6 +2,7 @@ package com.github.funthomas424242.rades.example.domain.personal;
 
 
 import com.github.funthomas424242.rades.annotations.accessors.RadesNoAccessor;
+import com.github.funthomas424242.rades.annotations.builder.RadesNoBuilder;
 import com.github.funthomas424242.rades.example.domain.DomainObject;
 import com.github.funthomas424242.rades.example.domain.Name;
 import com.github.funthomas424242.rades.example.domain.zeit.Abwesenheit;
@@ -10,6 +11,7 @@ import com.github.funthomas424242.rades.example.domain.zeit.Datum;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -26,7 +28,8 @@ public final class Person {
     protected Name vorname;
 
     @RadesNoAccessor
-    protected List<Abwesenheit> abwesenheiten;
+    @RadesNoBuilder
+    protected List<Abwesenheit> abwesenheiten = new ArrayList<>();
 
     protected Person(){}
 

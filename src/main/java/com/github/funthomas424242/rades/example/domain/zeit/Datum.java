@@ -21,6 +21,10 @@ public class Datum {
         return LocalDate.of(jahr, monat, tag);
     }
 
+    public static Datum of(final int tag, final int monat, final int jahr) {
+        return new DatumBuilder().withJahr(jahr).withMonat(monat).withTag(tag).build();
+    }
+
     public static Datum fromLocalDate(final LocalDate date) {
         return new DatumBuilder()
                 .withJahr(date.getYear())
@@ -30,8 +34,8 @@ public class Datum {
     }
 
     @Override
-    public String toString(){
-        return tag + "."+monat+"."+jahr;
+    public String toString() {
+        return tag + "." + monat + "." + jahr;
     }
 
 }
